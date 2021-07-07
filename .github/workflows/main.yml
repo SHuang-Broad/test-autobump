@@ -36,7 +36,7 @@ jobs:
           git-message: 'chore(release): {version}'
           version-file: './VERSION'
           version-path: 'version'
-          skip-commit: "true"
+          skip-commit: "false"
           output-file: "false"
           
       - name: Create Release
