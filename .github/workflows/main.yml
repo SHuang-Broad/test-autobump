@@ -36,6 +36,7 @@ jobs:
           git-message: 'chore(release): {version}' # Commit message that is used when committing the changelog.
           git-user-name: 'Awesome Changelog Action'
           git-user-email: 'awesome_changelog@github.actions.com'
+          git-pull-method: --ff-only
           preset: 'angular' # Preset that is used from conventional commits.
           tag-prefix: 'v' # Prefix for the git tags.
           release-count: '10' # Number of releases to preserve in changelog. Default 5, use 0 to regenerate all.
