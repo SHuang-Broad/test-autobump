@@ -7,13 +7,13 @@ on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
     branches: [ main ]
-    paths-ignore:
-      - 'VERSION' # todo: also ignore badge
+#     paths-ignore:
+#       - 'VERSION' # todo: also ignore badge
       
   pull_request:
     branches: [ main ]
-    paths-ignore:
-      - 'VERSION' # todo: also ignore badge
+#     paths-ignore:
+#       - 'VERSION' # todo: also ignore badge
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -40,7 +40,7 @@ jobs:
           preset: 'angular' # Preset that is used from conventional commits.
           tag-prefix: 'v' # Prefix for the git tags.
           release-count: '10' # Number of releases to preserve in changelog. Default 5, use 0 to regenerate all.
-          version-file: 'VERSION'
+          version-file: 'VERSION.json'
           version-path: 'version'
           output-file: 'false' # File to output the changelog to. Default CHANGELOG.md, when providing 'false' no file will be generated / updated.
           skip-on-empty: 'false' # Boolean to specify if you want to skip empty release (no-changelog generated).
