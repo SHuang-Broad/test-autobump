@@ -32,7 +32,7 @@ jobs:
         id: changelog
         uses: TriPSs/conventional-changelog-action@v3
         with:
-          # github-token: ${{ secrets.github_token }}
+          github-token: ${{ secrets.github_token }}
           git-message: 'chore(release): {version}' # Commit message that is used when committing the changelog.
           git-user-name: 'Awesome Changelog Action'
           git-user-email: 'awesome_changelog@github.actions.com'
