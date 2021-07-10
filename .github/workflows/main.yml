@@ -12,8 +12,8 @@ on:
       
   pull_request:
     branches: [ main ]
-#     paths-ignore:
-#       - 'VERSION' # todo: also ignore badge
+    paths-ignore:
+      - 'VERSION.json' # todo: also ignore badge
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
