@@ -9,11 +9,6 @@ on:
     branches: [ main ]
     paths-ignore:
       - 'VERSION.json' # todo: also ignore badge
-      
-#   pull_request:
-#     branches: [ main ]
-#     paths-ignore:
-#       - 'VERSION.json' # todo: also ignore badge
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -32,20 +27,21 @@ jobs:
         id: changelog
         uses: TriPSs/conventional-changelog-action@v3
         with:
+          skip-commit: 'true' # Do not create a release commit.
+          version-file: 'VERSION.json'
+          version-path: 'version'
+          tag-prefix: '' # Prefix for the git tags.
           github-token: ${{ secrets.github_token }}
           git-message: 'chore(release): {version}' # Commit message that is used when committing the changelog.
           git-user-name: 'Awesome Changelog Action'
           git-user-email: 'awesome_changelog@github.actions.com'
           git-pull-method: --ff-only
           preset: 'angular' # Preset that is used from conventional commits.
-          tag-prefix: '' # Prefix for the git tags.
           release-count: '10' # Number of releases to preserve in changelog. Default 5, use 0 to regenerate all.
-          version-file: 'VERSION.json'
-          version-path: 'version'
           output-file: 'false' # File to output the changelog to. Default CHANGELOG.md, when providing 'false' no file will be generated / updated.
           skip-on-empty: 'false' # Boolean to specify if you want to skip empty release (no-changelog generated).
           skip-version-file: 'false' # Do not update the version file.
-          skip-commit: 'true' # Do not create a release commit. 
+          
           
           
       - name: Create Release
