@@ -22,7 +22,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
         with:
-          token: ${{ secrets.GITHUB_TOKEN_ACTION }}
+          token: ${{ secrets.SHUANG_GITHUB_TOKEN_ACTION }}
 
       # Runs a single command using the runners shell
       - name: Conventional Changelog Action
